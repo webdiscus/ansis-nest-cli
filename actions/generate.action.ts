@@ -1,4 +1,4 @@
-import * as chalk from 'chalk';
+import { red } from 'ansis';
 import * as path from 'path';
 import { Answers } from 'inquirer';
 import { Input } from '../commands';
@@ -144,7 +144,7 @@ const generateFiles = async (inputs: Input[]) => {
     await collection.execute(schematicInput.value as string, schematicOptions);
   } catch (error) {
     if (error && error.message) {
-      console.error(chalk.red(error.message));
+      console.error(red(error.message));
     }
   }
 };
